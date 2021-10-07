@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
-   return "Welcome to Assignment 1 of Web Technologies E2021<br>Edit this page to get started 😄";
-});
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\CoursesController;
+
