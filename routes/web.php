@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,22 +16,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\MainController;
-use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\CoursesController;
+Route::get('/', [MainController::class, 'start']);
 
-Route::get('/courses', [ CoursesController::class,'showLists']);
+Route::get('/departments', [DepartmentController::class, 'listDepartment']);
 
-Route::get('/courses/create', [ CoursesController::class,'form']);
+Route::get('/departments/create', [DepartmentController::class, 'createDepartmentForm']);
 
-Route::post('/courses', [ CoursesController::class,'create']);
+Route::post('/departments', [DepartmentController::class, 'createDepartment']);
 
-Route::get('/courses', [ CoursesController::class,'showCourses']);
+Route::get('/departments/{department}', [DepartmentController::class, 'showDepartment']);
 
-Route::get('/courses', [ CoursesController::class,'updateForm']);
+Route::get('/departments/{department/edit}', [DepartmentController::class, 'editDepartment']);
 
-Route::put('/courses', [ CoursesController::class,'updateCourses']);
+Route::put('/departments/{department}', [DepartmentController::class, 'updateDepartment']);
 
-Route::delete('/courses', [ CoursesController::class,'deleteCourses']);
+Route::delete('/departments/{department}', [DepartmentController::class,]);
 
+Route::get('/courses', [CoursesController::class, 'showLists']);
 
+Route::get('/courses/create', [CoursesController::class, 'form']);
+
+Route::post('/courses', [CoursesController::class, 'create']);
+
+Route::get('/courses', [CoursesController::class, 'showCourses']);
+
+Route::get('/courses', [CoursesController::class, 'updateForm']);
+
+Route::put('/courses', [CoursesController::class, 'updateCourses']);
+
+Route::delete('/courses', [CoursesController::class, 'deleteCourses']);

@@ -2,36 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class CoursesController extends Controller
 {
     public function showLists()
     {
         return 'courses';
     }
+
     public function form()
     {
-        return 'coursFormCreate';
+        return 'courseFormCreate';
     }
+
     public function create()
     {
-        return 'createCours';
+        return 'createCourse';
     }
+
     public function showCourses()
     {
         return 'showcourses';
     }
+
     public function updateForm()
     {
         return 'form that update courses';
     }
+
     public function updateCourses()
     {
-        return 'update the couses';
+        return 'update the courses';
     }
+
     public function deleteCourses()
     {
-        return 'Deltes the courses';
+        return 'deletes the courses';
     }
 }
