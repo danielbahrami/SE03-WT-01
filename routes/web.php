@@ -17,3 +17,18 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CoursesController;
 
+Route::get('/courses', [ CoursesController::class,'showLists']);
+
+Route::get('/courses/create', [ CoursesController::class,'form']);
+
+Route::post('/courses', [ CoursesController::class,'create']);
+
+Route::get('/courses', [ CoursesController::class,'showCourses']);
+
+Route::get('/courses', [ CoursesController::class,'updateForm']);
+
+Route::put('/courses', [ CoursesController::class,'updateCourses']);
+
+Route::delete('/courses', [ CoursesController::class,'deleteCourses']);
+
+
