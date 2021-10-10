@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 class MainController extends Controller
 {
-    public function start()
+    public function welcome()
     {
-        return 'Start page';
+        return 'Welcome to itsLearning';
     }
 }

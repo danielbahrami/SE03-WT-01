@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MainController::class, 'start']);
+Route::get('/', [MainController::class, 'welcome']);
 
 Route::get('/departments', [DepartmentController::class, 'listDepartment']);
 
