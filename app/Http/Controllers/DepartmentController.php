@@ -12,7 +12,7 @@ class DepartmentController extends Controller
 .department {
 font-family: arial, sans-serif;
 border-collapse: collapse;
-width: 100%;
+width: 70%;
 }
 .code{
 border: 1px solid #dddddd;
