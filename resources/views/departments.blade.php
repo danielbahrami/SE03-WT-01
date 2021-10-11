@@ -44,7 +44,7 @@
         <tr>
             <td class="code">{{$department['code']}}</td>
             <td class="code">{{$department['name']}}</td>
-            <td class="courses">3 courses</td>
+            <td class="courses">0</td>
             <td class="show"><a href=/departments/{department}>Show</a></td>
         </tr>
     @endforeach
