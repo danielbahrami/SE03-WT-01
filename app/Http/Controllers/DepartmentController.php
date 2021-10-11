@@ -8,7 +8,6 @@ class DepartmentController extends Controller
     {
         return <<<HTML
 <html>
-<head>
 <style>
 .department {
 font-family: arial, sans-serif;
@@ -36,14 +35,11 @@ border: 1px solid #dddddd;
   padding: 8px;
 }
 .success{
-
 }
+
 </style>
-</head>
 <body>
-
-<h2>List over departments</h2>
-
+<h1>List of departments</h1>
 <table class="department">
   <tr>
     <th class="code">Code</th>
@@ -55,13 +51,11 @@ border: 1px solid #dddddd;
     <td class="code">456</td>
     <td class="name">IT Department</td>
     <td class="courses">3 courses</td>
-    <td class="show"><a href=http://127.0.0.1:8000/departments/{department}>Show</a></td>
+    <td class="show"><a href=/departments/{department}>Show</a></td>
   </tr>
 </table>
-<div>
-<h2>Create department</h2>
-<p> To create a new department please press <a href=http://127.0.0.1:8000/departments/create>her</a> </p>
 
+<a href=/departments/create><h2>Create new department</h2></a>
 </div>
 </body>
 
