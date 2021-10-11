@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MainController::class, 'welcome']);
+Route::get('/', [MainController::class, 'index']);
 
-Route::get('/departments', [DepartmentController::class, 'listDepartment']);
+Route::get('/departments', [DepartmentController::class, 'departments']);
 
-Route::get('/departments/create', [DepartmentController::class, 'createDepartmentForm']);
+Route::get('/departments/create', [DepartmentController::class, 'createDepartment']);
 
 Route::post('/departments', [DepartmentController::class, 'createDepartment']);
 
