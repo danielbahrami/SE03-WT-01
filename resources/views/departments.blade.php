@@ -43,12 +43,15 @@
         <th class="courses">Courses</th>
         <th class="show">Show</th>
     </tr>
-    <tr>
-        <td class="code">456</td>
-        <td class="name">IT Department</td>
-        <td class="courses">3 courses</td>
-        <td class="show"><a href=/departments/{department}>Show</a></td>
-    </tr>
+    @foreach($departments as $department)
+        <tr>
+            <td class="code">{{$department['code']}}</td>
+            <td class="code">{{$department['name']}}</td>
+            <td class="courses">3 courses</td>
+            <td class="show"><a href=/departments/{department}>Show</a></td>
+        </tr>
+    @endforeach
+
 </table>
 
 <a href=/departments/create><h2>Create new department</h2></a>
