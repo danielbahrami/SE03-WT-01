@@ -5,43 +5,24 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', [MainController::class, 'index']);
 
-Route::get('/departments', [DepartmentController::class, 'departments']);
+Route::prefix('departments')->group(function() {
+    Route::get('/', [DepartmentController::class, 'index']);
+    Route::get('/create', [DepartmentController::class, 'createDepartment']);
+    Route::post('/', [DepartmentController::class, 'createDepartment']);
+    Route::get('/{id}', [DepartmentController::class, 'showDepartment']);
+    Route::get('/{id}/edit', [DepartmentController::class, 'editDepartment']);
+    Route::put('/{id}', [DepartmentController::class, 'updateDepartment']);
+    Route::delete('/{id}', [DepartmentController::class, 'deleteDepartment']);
+});
 
-Route::get('/departments/create', [DepartmentController::class, 'createDepartment']);
-
-Route::post('/departments', [DepartmentController::class, 'createDepartment']);
-
-Route::get('/departments/{department}', [DepartmentController::class, 'showDepartment']);
-
-Route::get('/departments/{department/edit}', [DepartmentController::class, 'editDepartment']);
-
-Route::put('/departments/{department}', [DepartmentController::class, 'updateDepartment']);
-
-Route::delete('/departments/{department}', [DepartmentController::class,]);
-
-Route::get('/courses', [CoursesController::class, 'showLists']);
-
-Route::get('/courses/create', [CoursesController::class, 'form']);
-
-Route::post('/courses', [CoursesController::class, 'create']);
-
-Route::get('/courses', [CoursesController::class, 'showCourses']);
-
-Route::get('/courses', [CoursesController::class, 'updateForm']);
-
-Route::put('/courses', [CoursesController::class, 'updateCourses']);
-
-Route::delete('/courses', [CoursesController::class, 'deleteCourses']);
+Route::prefix('courses')->group(function () {
+    Route::get('/', [CoursesController::class, 'index']);
+    Route::get('/create', [CoursesController::class, 'createCourse']);
+    Route::post('/', [CoursesController::class, 'createCourse']);
+    Route::get('/{id}', [CoursesController::class, 'showCourse']);
+    Route::get('/{id}/edit', [CoursesController::class, 'editCourse']);
+    Route::put('/{id}', [CoursesController::class, 'updateCourse']);
+    Route::delete('/{id}', [CoursesController::class, 'deleteCourse']);
+});

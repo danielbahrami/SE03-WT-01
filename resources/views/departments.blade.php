@@ -30,9 +30,6 @@
         padding: 8px;
     }
 
-    .success {
-    }
-
 </style>
 <body>
 <h1>List of departments</h1>
