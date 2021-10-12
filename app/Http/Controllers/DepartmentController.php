@@ -14,7 +14,7 @@ class DepartmentController extends Controller
     }
 
     public function createDepartment(Request $request) {
-        $deparment= new Department;
+        $deparment = new Department();
         $deparment->name=$request->name;
         $deparment->code=$request->code;
         $deparment->description=$request->description;
