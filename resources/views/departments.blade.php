@@ -52,7 +52,7 @@
     @foreach($departments as $department)
         <tr>
             <td class="code">{{$department['code']}}</td>
-            <td class="code">{{$department['name']}}</td>
+            <td class="name">{{$department['name']}}</td>
             <td class="courses">0</td>
             <td class="show"><a href={{url('/department', [$department ->id])}}>Show</a></td>
         </tr>
