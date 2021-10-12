@@ -29,10 +29,19 @@
         text-align: left;
         padding: 8px;
     }
+    .success-message {
+        font-family: arial, sans-serif;
+    }
 
 </style>
 <body>
 <h1>List of departments</h1>
+
+@if(session('message'))
+    <div class="success-message">{{session('message')}}</div>
+@endif
+
+
 <table class="department">
     <tr>
         <th class="code">Code</th>

@@ -19,7 +19,7 @@ class DepartmentController extends Controller
         $deparment->code=$request->code;
         $deparment->description=$request->description;
         $deparment->save();
-        return redirect('/departments');
+        return redirect('/departments')->with('message', 'Success!');
     }
 
 }
