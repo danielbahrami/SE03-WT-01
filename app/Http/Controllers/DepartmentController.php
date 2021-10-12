@@ -22,4 +22,8 @@ class DepartmentController extends Controller
         return redirect('/departments')->with('message', 'Success!');
     }
 
+    public function showDepartment(Request $request) {
+       $department = new Department();
+    }
+
 }
