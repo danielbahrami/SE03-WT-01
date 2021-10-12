@@ -1,20 +1,20 @@
 <?php
 
 use App\Http\Controllers\CoursesController;
-use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index']);
 
 Route::prefix('departments')->group(function() {
-    Route::get('/', [DepartmentController::class, 'index']);
+    Route::get('/', [DepartmentsController::class, 'index']);
     Route::view('/create', 'createDepartment');
-    Route::post('/create', [DepartmentController::class, 'createDepartment']);
-    Route::get('/{id}', [DepartmentController::class, 'showDepartment']);
-    Route::get('/{id}/edit', [DepartmentController::class, 'editDepartment']);
-    Route::put('/{id}', [DepartmentController::class, 'updateDepartment']);
-    Route::delete('/{id}', [DepartmentController::class, 'deleteDepartment']);
+    Route::post('/create', [DepartmentsController::class, 'createDepartment']);
+    Route::get('/{id}', [DepartmentsController::class, 'showDepartment']);
+    Route::get('/{id}/edit', [DepartmentsController::class, 'editDepartment']);
+    Route::put('/{id}', [DepartmentsController::class, 'updateDepartment']);
+    Route::delete('/{id}', [DepartmentsController::class, 'deleteDepartment']);
 });
 
 Route::prefix('courses')->group(function () {
