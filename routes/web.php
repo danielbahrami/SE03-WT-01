@@ -9,8 +9,9 @@ Route::get('/', [MainController::class, 'index']);
 
 Route::prefix('departments')->group(function() {
     Route::get('/', [DepartmentController::class, 'index']);
-    Route::get('/create', [DepartmentController::class, 'createDepartment']);
-    Route::post('/', [DepartmentController::class, 'createDepartment']);
+    Route::view('/create', 'createDepartment');
+    //Route::view('/','createDepartment');
+    Route::post('/create', [DepartmentController::class, 'createDepartment']);
     Route::get('/{id}', [DepartmentController::class, 'showDepartment']);
     Route::get('/{id}/edit', [DepartmentController::class, 'editDepartment']);
     Route::put('/{id}', [DepartmentController::class, 'updateDepartment']);
