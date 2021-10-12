@@ -9,7 +9,7 @@
     <input type="text" id="code" name="code" placeholder="Enter code"><br>
     <label for="description">Description:</label><br>
     <input type="text" id="description" name="description" placeholder="Enter description"><br>
-    <button type="submit">Create department</button>
+    <button class="submit" type="submit">Create department</button>
 </form>
 </body>
 </html>
