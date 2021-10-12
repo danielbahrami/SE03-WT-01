@@ -1,10 +1,11 @@
 <html>
-<body><h1>Welcome to itsLearning</h1>
+<body>
+<h1 class="welcome">Welcome to itsLearning</h1>
 <br>
 <h2>
-    <a href="/departments">Departments</a>
+    <a class="departments-link" href="/departments">Departments</a>
     <br>
-    <a href="/courses">Courses</a>
+    <a class="courses-link" href="/courses">Courses</a>
 </h2>
 </body>
 </html>

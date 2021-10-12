@@ -60,6 +60,6 @@
 
 </table>
 
-<a href=/departments/create><h2>Create new department</h2></a>
+<a class="new" href=/departments/create><h2>Create new department</h2></a>
 </div>
 </body>
