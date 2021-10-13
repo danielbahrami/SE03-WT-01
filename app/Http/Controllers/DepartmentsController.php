@@ -22,9 +22,9 @@ class DepartmentsController extends Controller
         return redirect('/departments')->with('message', 'Success!');
     }
 
-    public function showDepartment(Department $department)
+    public function showDepartment()
     {
-        return view($this->showDepartment(), ['id' => $department]);
+        ddd('Test');
     }
 
 }
