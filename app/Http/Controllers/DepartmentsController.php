@@ -27,6 +27,4 @@ class DepartmentsController extends Controller
         return Department::find($id);
     }
 
-
-
 }
