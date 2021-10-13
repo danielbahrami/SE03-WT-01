@@ -22,9 +22,11 @@ class DepartmentsController extends Controller
         return redirect('/departments')->with('message', 'Success!');
     }
 
-    public function showDepartment()
+    public function showDepartment($id)
     {
-        ddd('Test');
+        return Department::find($id);
     }
+
+
 
 }
