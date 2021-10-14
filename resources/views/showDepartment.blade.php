@@ -1,6 +1,6 @@
 <html>
 <style>
-    .show {
+    .department {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 70%;
@@ -32,41 +32,36 @@
 <body>
 <h1>Show department</h1>
 
-@if(session('message'))
-    <div class="success-message">{{session('message')}}</div>
-@endif
-
-
-<table class="show">
+<table class="department">
     <tr>
         <th class="code">Code</th>
         <th class="name">Name</th>
         <th class="description">Description</th>
     </tr>
-    @foreach($departments as $department)
-        <tr>
-            <td class="code">{{$department['code']}}</td>
-            <td class="name">{{$department['name']}}</td>
-            <td class="description">{{$department['description']}}</td>
-        </tr>
-@endforeach
+@foreach($departments as $department)
+    <tr>
+        <th class="code">{{$department['code']}}</th>
+        <th class="name">{{$department['name']}}</th>
+        <th class="description">{{$department['description']}}</th>
+    </tr>
+    @endforeach
 </table>
 
-<h1>Show courses</h1>
 
-<table class="courses">
+<table class="course">
     <tr>
         <th class="code">Code</th>
         <th class="name">Name</th>
         <th class="ects">ECTS</th>
+        <td class="show">Show</td>
+
+
     </tr>
-    @foreach($departments as $department)
-        <tr>
-            <td class="code">{{$department['code']}}</td>
-            <td class="name">{{$department['name']}}</td>
-            <td class="ects">{{$department['ects']}}</td>
-            <td class="show"><a href={{url('/course', [$course ->id])}}>Show</a>
-        </tr>
-    @endforeach
+
+
 </table>
+
+</body>
+</html>
+
 

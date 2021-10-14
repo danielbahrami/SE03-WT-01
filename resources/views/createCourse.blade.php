@@ -15,6 +15,9 @@
 
     <label for="department">Department:</label><br>
     <select name="department" id="department">
+
+        <!--<h1>course as courses</h1>-->
+
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
