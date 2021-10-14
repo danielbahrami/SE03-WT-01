@@ -14,11 +14,11 @@ class DepartmentsController extends Controller
 
     public function createDepartment(Request $request)
     {
-        $deparment = new Department();
-        $deparment->code = $request->code;
-        $deparment->name = $request->name;
-        $deparment->description = $request->description;
-        $deparment->save();
+        $department = new Department();
+        $department->code = $request->code;
+        $department->name = $request->name;
+        $department->description = $request->description;
+        $department->save();
         return redirect('/departments')->with('message', 'Success!');
     }
 
