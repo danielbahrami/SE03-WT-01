@@ -60,7 +60,7 @@
             <td class="code">{{$course['code']}}</td>
             <td class="name">{{$course['name']}}</td>
             <td class="ects">{{$course['ects']}}</td>
-            <td class="department">{{$department['department']}}</td>
+            <td class="department">{{$course['department']}}</td>
             <td class="show"><a href={{url('/courses', [$course ->id])}}>Show</a></td>
         </tr>
     @endforeach

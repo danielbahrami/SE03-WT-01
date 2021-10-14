@@ -15,9 +15,10 @@ class CoursesController extends Controller
     public function createCourse(Request $request)
     {
         $course = new Course();
-        $course->name = $request->name;
         $course->code = $request->code;
-        $course->description = $request->description;
+        $course->name = $request->name;
+        $course->ects = $request->ects;
+        $course->department =$request->department;
         $course->save();
         return redirect('/courses')->with('message', 'Success!');
     }
