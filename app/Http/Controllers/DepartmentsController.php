@@ -15,8 +15,8 @@ class DepartmentsController extends Controller
     public function createDepartment(Request $request)
     {
         $deparment = new Department();
-        $deparment->name = $request->name;
         $deparment->code = $request->code;
+        $deparment->name = $request->name;
         $deparment->description = $request->description;
         $deparment->save();
         return redirect('/departments')->with('message', 'Success!');
