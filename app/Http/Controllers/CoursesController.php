@@ -15,17 +15,17 @@ class CoursesController extends Controller
     public function createCourse(Request $request)
     {
         $course = new Course();
-        $course->code = $request->code;
-        $course->name = $request->name;
-        $course->ects = $request->ects;
-        $course->department =$request->department;
-        $course->save();
+        $course -> code = $request -> code;
+        $course -> name = $request -> name;
+        $course -> ects = $request -> ects;
+        $course -> department_id = $request -> department_id;
+        $course -> save();
         return redirect('/courses')->with('message', 'Success!');
     }
 
     public function showCourse($id)
     {
-        return Department::find($id);
+        return Course::find($id);
     }
 
 }
