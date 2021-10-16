@@ -22,7 +22,7 @@ class DepartmentsController extends Controller
         return redirect('/departments')->with('message', 'Success!');
     }
 
-    public function showDepartment($id)
+    public function showDepartment() {
     {
         $data = Department::all();
         return view('departments', ['departments' => $data]);
