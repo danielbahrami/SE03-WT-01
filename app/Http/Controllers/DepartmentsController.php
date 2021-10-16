@@ -25,7 +25,7 @@ class DepartmentsController extends Controller
     public function showDepartment($id)
     {
         $data = Department::all();
-        return view('departments', ['departments' => $data])
+        return view('departments', ['departments' => $data]);
     }
     public function editDepartment($id)
     {
