@@ -6,14 +6,12 @@ use App\Models\Department;
 
 class DepartmentsController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         $data = Department::all();
         return view('departments', ['departments' => $data]);
     }
 
-    public function createDepartment(Request $request)
-    {
+    public function createDepartment(Request $request) {
         $department = new Department();
         $department->code = $request->code;
         $department->name = $request->name;
@@ -23,12 +21,11 @@ class DepartmentsController extends Controller
     }
 
     public function showDepartment() {
-    {
         $data = Department::all();
         return view('departments', ['departments' => $data]);
     }
-    public function editDepartment($id)
-    {
+
+    public function editDepartment($id) {
         return Department::find($id);
         /*
         $department= Department::find($request->id);
@@ -38,7 +35,5 @@ class DepartmentsController extends Controller
         $department->save();
         return redirect('/departments')->with('message', 'Success!');
         */
-
     }
-
 }
