@@ -17,7 +17,7 @@ class DepartmentsController extends Controller
         $department->name = $request->name;
         $department->description = $request->description;
         $department->save();
-        return redirect('/departments')->with('message', 'Success!');
+        return redirect('/departments')->with('message', 'Department "' . $department->code . '" created successfully');
     }
 
     public function showDepartment() {
