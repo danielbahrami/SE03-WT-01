@@ -43,7 +43,7 @@
 <body>
 <h1>List of courses</h1>
 
-@if(session('message'))
+@if (session('message'))
     <div class="success-message">{{session('message')}}</div>
 @endif
 
@@ -55,7 +55,7 @@
         <th class="department">Department</th>
         <th class="show">Show</th>
     </tr>
-    @foreach($courses as $course)
+    @foreach ($courses as $course)
         <tr>
             <td class="code">{{$course['code']}}</td>
             <td class="name">{{$course['name']}}</td>
@@ -64,7 +64,6 @@
             <td class="show"><a href={{url('/courses', [$course ->id])}}>Show</a></td>
         </tr>
     @endforeach
-
 </table>
 
 <a class="new" href=/courses/create><h2>Create new course</h2></a>

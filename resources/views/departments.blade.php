@@ -10,7 +10,7 @@
         <th class="courses">Courses</th>
         <th class="show">Show</th>
     </tr>
-    @foreach($departments as $department)
+    @foreach ($departments as $department)
         <tr>
             <td class="code">{{$department['code']}}</td>
             <td class="name">{{$department['name']}}</td>
@@ -22,7 +22,7 @@
 
 <a class="new" href=/departments/create><h2>Create new department</h2></a>
 
-@if(session('message'))
+@if (session('message'))
     <div class="success-message">{{session('message')}}</div>
 @endif
 
@@ -59,6 +59,7 @@
         text-align: left;
         padding: 8px;
     }
+
     .success-message {
         font-family: arial, sans-serif;
     }
