@@ -14,16 +14,13 @@ class CoursesController extends Controller
 
     public function createCourse(Request $request)
     {
-        return view('createCourse');
-        /*
-        $data = new Course();
-        $data -> code = $request -> code;
-        $data -> name = $request -> name;
-        $data -> ects = $request -> ects;
-        //$course -> department_id = $request -> department_id;
-        $data -> save();
-        return redirect('/courses')->with('message', 'Success!');
-        */
+        $course = new Course();
+        $course -> code = $request -> code;
+        $course -> name = $request -> name;
+        $course -> ects = $request -> ects;
+        $course -> save();
+        return redirect('/courses');
+
 
     }
 

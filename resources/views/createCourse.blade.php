@@ -13,18 +13,6 @@
     <label for="ects">ECTS:</label><br>
     <input type="number" id="ects" name="ects" placeholder="Enter ects"><br><br>
 
-    <label for="department">Department:</label><br>
-    <select name="department" id="department">
-
-        <!--<h1>course as courses</h1>-->
-
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
-
-
     <label for="description">Description:</label><br>
     <input type="text" id="description" name="description" placeholder="Enter description"><br><br>
 

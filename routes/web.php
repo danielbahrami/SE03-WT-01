@@ -19,8 +19,9 @@ Route::prefix('departments')->group(function() {
 
 Route::prefix('courses')->group(function () {
     Route::get('/', [CoursesController::class, 'index']);
+    Route::view('/create',  'createCourse');
     Route::get('/create', [CoursesController::class, 'createCourse']);
-    Route::post('/', [CoursesController::class, 'createCourse']);
+    Route::post('/create', [CoursesController::class, 'createCourse']);
     Route::get('/{id}', [CoursesController::class, 'showCourse']);
     Route::get('/{id}/edit', [CoursesController::class, 'editCourse']);
     Route::put('/{id}', [CoursesController::class, 'updateCourse']);
