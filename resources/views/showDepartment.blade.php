@@ -16,12 +16,4 @@
     <p>{{$course -> name}}</p>
     <h2>ets:</h2>
     <p>{{$course -> ects}}</p>
-
-
 @endforeach
-
-
-<button class="remove">Delete</button>
-
-
-<a href={{"delete/".$department['id']}}></a>
