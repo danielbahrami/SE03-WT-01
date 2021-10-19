@@ -36,4 +36,11 @@ class DepartmentsController extends Controller
         return redirect('/departments')->with('message', 'Success!');
         */
     }
+
+    public function deleteDepartment($id) {
+        $department = Department::find($id);
+        $department->delete();
+        return redirect('/departments')->with('message', 'Department "' . $department->code . '" successfully removed');
+    }
+
 }
