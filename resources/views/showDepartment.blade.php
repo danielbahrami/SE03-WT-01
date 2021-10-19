@@ -6,7 +6,8 @@
 <p>{{$department -> name}}</p>
 <h2>Description:</h2>
 <p>{{$department -> description}}</p>
-
+<a href="{{$department['id']."/edit"}}">Edit department</a><br>
+<a href="{{$department['id']."/delete"}}">Delete department</a>
 <h1>Courses</h1>
 @foreach($department-> courses as $course)
     <h2>Code:</h2>

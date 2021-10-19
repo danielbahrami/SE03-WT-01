@@ -31,16 +31,19 @@ class DepartmentsController extends Controller
     }
 
     public function editDepartment($id) {
-        return Department::find($id);
-        /*
-        $department= Department::find($request->id);
-        $department->code = $request->code;
-        $department->name = $request->name;
-        $department->description = $request->description;
-        $department->save();
-        return redirect('/departments')->with('message', 'Success!');
-        */
+        $department = Department::find($id);
+        return view('editDepartment',['department'=>$department]);
     }
+
+    public function updateDepartment(Request $request) {
+        $department = Department::find($request->id);
+        $department -> name = $request -> name;
+        $department -> code = $request -> code;
+        $department -> description = $request -> description;
+        $department -> save();
+        return redirect('/departments')->with('message', 'Department "' . $department->code . '" updated successfully');
+    }
+
 
     public function deleteDepartment($id) {
         $department = Department::find($id);
