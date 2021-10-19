@@ -17,8 +17,8 @@ class CreateCoursesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('department_id');
             $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
-            $table->string('name')->unique();
             $table->string('code')->unique();
+            $table->string('name')->unique();
             $table->integer('ects');
             $table->text('description');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));

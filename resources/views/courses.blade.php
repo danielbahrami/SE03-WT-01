@@ -49,18 +49,18 @@
 
 <table class="course">
     <tr>
+        <th class="department">Department ID</th>
         <th class="code">Code</th>
         <th class="name">Name</th>
         <th class="ects">ECTS</th>
-        <th class="department">Department ID</th>
         <th class="show">Show</th>
     </tr>
     @foreach ($courses as $course)
         <tr>
+            <td class="department">{{$course['department_id']}}</td>
             <td class="code">{{$course['code']}}</td>
             <td class="name">{{$course['name']}}</td>
             <td class="ects">{{$course['ects']}}</td>
-            <td class="department">{{$course['department_id']}}</td>
             <td class="show"><a href={{url('/courses', [$course ->id])}}>Show</a></td>
         </tr>
     @endforeach
