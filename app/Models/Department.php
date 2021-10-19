@@ -9,7 +9,10 @@ class Department extends Model
 {
     use HasFactory;
 
+    public function course() {
+        return $this->hasOne(Course::class, 'department_id', 'id');
+    }
     public function courses() {
-        return $this->hasMany(Course::class);
+        return $this->hasMany(Course::class, 'department_id', 'id');
     }
 }

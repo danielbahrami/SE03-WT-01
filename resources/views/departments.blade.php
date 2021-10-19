@@ -22,6 +22,7 @@
 
 <a class="new" href=/departments/create><h2>Create new department</h2></a>
 
+
 @if (session('message'))
     <div class="success-message">{{session('message')}}</div>
 @endif

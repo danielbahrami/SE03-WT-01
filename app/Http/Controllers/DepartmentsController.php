@@ -24,9 +24,10 @@ class DepartmentsController extends Controller
     }
 
     public function showDepartment($id) {
+
         $department = Department::find($id);
-        //$course = Course::find($department_id);
-        return view('showDepartment', compact('department'));
+        $courses = $department->courses;
+       return view('showDepartment', compact('department','courses'));
     }
 
     public function editDepartment($id) {
