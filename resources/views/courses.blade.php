@@ -52,7 +52,7 @@
         <th class="code">Code</th>
         <th class="name">Name</th>
         <th class="ects">ECTS</th>
-        <th class="department">Department</th>
+        <th class="department">Department ID</th>
         <th class="show">Show</th>
     </tr>
     @foreach ($courses as $course)
