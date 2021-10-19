@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Department;
+use App\Models\Course;
+
 
 class DepartmentsController extends Controller
 {
@@ -20,9 +23,10 @@ class DepartmentsController extends Controller
         return redirect('/departments')->with('message', 'Department "' . $department->code . '" created successfully');
     }
 
-    public function showDepartment() {
-        $data = Department::all();
-        return view('showDepartment', ['departments' => $data]);
+    public function showDepartment($id) {
+        $department = Department::find($id);
+        //$course = Course::find($department_id);
+        return view('showDepartment', compact('department'));
     }
 
     public function editDepartment($id) {
