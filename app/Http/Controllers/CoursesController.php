@@ -22,7 +22,8 @@ class CoursesController extends Controller {
     }
 
     public function showCourse($id) {
-        return Course::find($id);
+        $course = Course::find($id);
+        return view('showCourse', ['course' => $course]);
     }
 
     public function editCourse($id) {
