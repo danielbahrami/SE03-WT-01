@@ -1,7 +1,7 @@
 <html>
 <body>
 <h1>Edit department</h1>
-<form action="/edit" method="POST">
+<form action="/editDepartment" method="POST">
     @csrf
     <input type="hidden" name="id" value="{{$department['id']}}">
     <label for="name">Name:</label><br>

@@ -16,7 +16,7 @@ Route::prefix('departments')->group(function() {
     Route::get('/{id}/delete', [DepartmentsController::class, 'deleteDepartment']);
 });
 
-Route::post('edit', [DepartmentsController::class, 'updateDepartment']);
+Route::post('editDepartment', [DepartmentsController::class, 'updateDepartment']);
 
 Route::prefix('courses')->group(function () {
     Route::get('/', [CoursesController::class, 'index']);
@@ -27,4 +27,4 @@ Route::prefix('courses')->group(function () {
     Route::get('/{id}/delete', [CoursesController::class, 'deleteCourse']);
 });
 
-Route::post('edit', [CoursesController::class, 'updateCourse']);
+Route::post('editCourse', [CoursesController::class, 'updateCourse']);
