@@ -24,7 +24,6 @@ class DepartmentsController extends Controller
     }
 
     public function showDepartment($id) {
-
         $department = Department::find($id);
         $courses = $department->courses;
        return view('showDepartment', compact('department','courses'));
