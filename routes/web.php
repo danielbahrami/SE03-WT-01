@@ -20,11 +20,11 @@ Route::post('edit', [DepartmentsController::class, 'updateDepartment']);
 
 Route::prefix('courses')->group(function () {
     Route::get('/', [CoursesController::class, 'index']);
-    Route::view('/create',  'createCourse');
-    Route::get('/create', [CoursesController::class, 'createCourse']);
+    Route::view('/create', 'createCourse');
     Route::post('/create', [CoursesController::class, 'createCourse']);
     Route::get('/{id}', [CoursesController::class, 'showCourse']);
     Route::get('/{id}/edit', [CoursesController::class, 'editCourse']);
-    Route::put('/{id}', [CoursesController::class, 'updateCourse']);
-    Route::delete('/{id}', [CoursesController::class, 'deleteCourse']);
+    Route::get('/{id}/delete', [CoursesController::class, 'deleteCourse']);
 });
+
+Route::post('edit', [CoursesController::class, 'updateCourse']);
