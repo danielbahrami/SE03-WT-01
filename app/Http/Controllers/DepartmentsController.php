@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Department;
 use App\Models\Course;
 
-
 class DepartmentsController extends Controller
 {
     public function index() {
@@ -43,11 +42,9 @@ class DepartmentsController extends Controller
         return redirect('/departments')->with('message', 'Department "' . $department->code . '" updated successfully');
     }
 
-
     public function deleteDepartment($id) {
         $department = Department::find($id);
         $department->delete();
         return redirect('/departments')->with('message', 'Department "' . $department->code . '" successfully removed');
     }
-
 }
