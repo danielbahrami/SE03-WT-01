@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Department;
 use Illuminate\Http\Request;
+use \Illuminate\Http\Response;
 use App\Models\Course;
 
 class CoursesController extends Controller {
@@ -12,7 +14,8 @@ class CoursesController extends Controller {
 
     public function createCourse(Request $request) {
         $course = new Course();
-        $course -> department_id = $request -> department_id;
+        $department = Department::all();
+        return view('/createCourse',compact('department'));
         $course -> code = $request -> code;
         $course -> name = $request -> name;
         $course -> ects = $request -> ects;

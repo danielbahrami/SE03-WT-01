@@ -16,8 +16,16 @@
     <label for="description">Description:</label><br>
     <input type="text" id="description" name="description" placeholder="Enter description"><br><br>
 
-
-    <button class="submit" type="submit">Create course</button>
+    <select name="department" id="department">
+        <option selected="false">
+            Department..
+        </option>
+        @foreach($department as $depart)
+             <option value="{{ $depart->id }}">{{ $depart->name }}</option>
+        @endforeach
+    </select>
+<br><br>
+<button class="submit" type="submit">Create course</button>
 </form>
 
 </body>
