@@ -20,7 +20,7 @@ Route::post('editDepartment', [DepartmentsController::class, 'updateDepartment']
 
 Route::prefix('courses')->group(function () {
     Route::get('/', [CoursesController::class, 'index']);
-    Route::view('/create', [CoursesController::class, 'createCourse']);
+    Route::get('/create', [CoursesController::class, 'createCourse']);
     Route::post('/create', [CoursesController::class, 'createCourse']);
     Route::get('/{id}', [CoursesController::class, 'showCourse']);
     Route::get('/{id}/edit', [CoursesController::class, 'editCourse']);
