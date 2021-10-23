@@ -35,7 +35,8 @@ class CoursesController extends Controller {
 
     public function editCourse($id) {
         $course = Course::find($id);
-        return view('editCourse', ['course' => $course]);
+        $department = Department::all();
+        return view('editCourse', ['course' => $course], ['department' => $department]);
     }
 
     public function updateCourse(Request $request) {

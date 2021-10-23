@@ -7,7 +7,7 @@
     <label for="department_id">Department:</label>
     <br>
     <select name="department_id" id="department_id">
-        <option selected="{{$course['department_id']}}"></option>
+        <option selected="true">{{$course['department_id']}}</option>
         @foreach($department as $department)
             <option value="{{$department -> id}}">{{$department -> name}}</option>
         @endforeach
