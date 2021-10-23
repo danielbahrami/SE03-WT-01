@@ -12,14 +12,18 @@ class CoursesController extends Controller {
         return view('courses', ['courses' => $data]);
     }
 
-    public function createCourse(Request $request) {
-        $course = new Course();
+    public function createCourse() {
         $department = Department::all();
-        return view('/createCourse',compact('department'));
+        return view('createCourse', compact('department'));
+    }
+
+    public function saveCourse(Request $request) {
+        $course = new Course();
         $course -> code = $request -> code;
         $course -> name = $request -> name;
         $course -> ects = $request -> ects;
         $course -> description = $request -> description;
+        // Foreign key?
         $course -> save();
         return redirect('/courses')->with('message', 'Course "' . $course -> code . '" created successfully');
     }

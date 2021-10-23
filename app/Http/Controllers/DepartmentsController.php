@@ -13,7 +13,11 @@ class DepartmentsController extends Controller
         return view('departments', ['departments' => $data]);
     }
 
-    public function createDepartment(Request $request) {
+    public function createDepartment() {
+        return view('createDepartment');
+    }
+
+    public function saveDepartment(Request $request) {
         $department = new Department();
         $department -> code = $request -> code;
         $department -> name = $request -> name;
