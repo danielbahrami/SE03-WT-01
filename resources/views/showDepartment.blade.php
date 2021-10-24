@@ -1,5 +1,11 @@
 <html>
 <style>
+    .header {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
     .department {
         font-family: arial, sans-serif;
         border-collapse: collapse;
@@ -30,7 +36,7 @@
         width: 70%;
     }
 
-    .ects {
+    .ects, .show {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
@@ -53,9 +59,9 @@
 
 <table class="department">
     <tr>
-        <th class="code">Code</th>
-        <th class="name">Name</th>
-        <th class="description">Description</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Description</th>
     </tr>
         <tr>
             <td class="code">{{$department -> code}}</td>
@@ -72,10 +78,10 @@
 
     <table class="course">
         <tr>
-            <th class="code">Code</th>
-            <th class="name">Name</th>
-            <th class="ects">ECTS</th>
-            <td class="show">Show</td>
+            <th>Code</th>
+            <th>Name</th>
+            <th>ECTS</th>
+            <th>Show</th>
         </tr>
         @foreach($department-> courses as $course)
         <tr>
@@ -83,7 +89,7 @@
             <td class="code">{{$course -> code}}</td>
             <td class="name">{{$course -> name}}</td>
             <td class="ects">{{$course -> ects}}</td>
-            <td class="show"><a href={{url('/courses', [$course ->id])}}>Show</a></td>
+            <td><a class="show" href={{url('/courses', [$course ->id])}}>Show</a></td>
         </tr>
     @endforeach
 </table>

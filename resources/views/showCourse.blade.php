@@ -4,16 +4,17 @@
 
 <table class="course">
     <tr>
-        <th class="department">Department ID</th>
-        <th class="name">Name</th>
-        <th class="code">Name</th>
-        <th class="ects">ECTS</th>
-        <th class="description">Description</th>
+        <th>Department ID</th>
+        <th>Name</th>
+        <th>Code</th>
+        <th>ECTS</th>
+        <th>Description</th>
     </tr>
     <tr>
-        <td class="department">{{$course -> department_id}}</td>
+        <td><a class="department" href="{{url('departments', [$course ->department->id])}}">{{$course ->department->name}}</a></td>
         <td class="name">{{$course -> name}}</td>
         <td class="code">{{$course -> code}}</td>
+        <td class="ects">{{$course -> ects}}</td>
         <td class="description">{{$course -> description}}</td>
     </tr>
 </table>
@@ -28,10 +29,15 @@
 </html>
 
 <style>
-    .department {
+    .course {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 70%;
+    }
+    .department {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
     }
 
     .name {
@@ -40,7 +46,7 @@
         padding: 8px;
     }
 
-    code {
+    .code {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;

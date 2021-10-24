@@ -23,7 +23,7 @@ class DepartmentsController extends Controller
         $department -> name = $request -> name;
         $department -> description = $request -> description;
         $department -> save();
-        return redirect('/departments') -> with('message', 'Department "' . $department -> code . '" created successfully');
+        return redirect('/departments') -> with('message', 'Department ' . $department -> code . ' created successfully');
     }
 
     public function showDepartment($id) {
@@ -43,12 +43,12 @@ class DepartmentsController extends Controller
         $department -> code = $request -> code;
         $department -> description = $request -> description;
         $department -> save();
-        return redirect('/departments') -> with('message', 'Department "' . $department -> code . '" updated successfully');
+        return redirect('/departments/'.$department->id) -> with('message', 'Department ' . $department -> code . ' updated successfully');
     }
 
     public function deleteDepartment($id) {
         $department = Department::find($id);
         $department -> delete();
-        return redirect('/departments') -> with('message', 'Department "' . $department -> code . '" successfully removed');
+        return redirect('/departments') -> with('message', 'Department ' . $department -> code . ' successfully removed');
     }
 }

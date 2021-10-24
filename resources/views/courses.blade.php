@@ -47,21 +47,22 @@
     <div class="success-message">{{session('message')}}</div>
 @endif
 
+
 <table class="course">
     <tr>
-        <th class="department">Department ID</th>
-        <th class="code">Code</th>
-        <th class="name">Name</th>
-        <th class="ects">ECTS</th>
-        <th class="show">Show</th>
+        <th>Department ID</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>ECTS</th>
+        <th>Show</th>
     </tr>
     @foreach ($courses as $course)
         <tr>
-            <td class="department">{{$course['department_id']}}</td>
+            <td><a class="department" href="{{url('departments', [$course ->department->id])}}">{{$course ->department->name}}</a></td>
             <td class="code">{{$course['code']}}</td>
             <td class="name">{{$course['name']}}</td>
             <td class="ects">{{$course['ects']}}</td>
-            <td class="show"><a href={{url('/courses', [$course ->id])}}>Show</a></td>
+            <td><a class="show" href={{url('/courses', [$course ->id])}}>Show</a></td>
         </tr>
     @endforeach
 </table>

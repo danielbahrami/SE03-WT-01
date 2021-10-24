@@ -19,13 +19,13 @@ class CoursesController extends Controller {
 
     public function saveCourse(Request $request) {
         $course = new Course();
-        $course -> department_id = $request -> department_id;
+        $course -> department_id = $request -> department;
         $course -> name = $request -> name;
         $course -> code = $request -> code;
         $course -> ects = $request -> ects;
         $course -> description = $request -> description;
         $course -> save();
-        return redirect('/courses') -> with('message', 'Course "' . $course -> code . '" created successfully');
+        return redirect('/courses') -> with('message', 'Course ' . $course -> code . ' created successfully');
     }
 
     public function showCourse($id) {
@@ -41,18 +41,18 @@ class CoursesController extends Controller {
 
     public function updateCourse(Request $request) {
         $course = Course::find($request -> id);
-        $course -> department_id = $request -> department_id;
+        $course -> department_id = $request -> department;
         $course -> name = $request -> name;
         $course -> code = $request -> code;
         $course -> ects = $request -> ects;
         $course -> description = $request -> description;
         $course -> save();
-        return redirect('/courses') -> with('message', 'Course "' . $course -> code . '" updated successfully');
+        return redirect('/courses/'.$course->id) -> with('message', 'Course ' . $course -> code . ' updated successfully');
     }
 
     public function deleteCourse($id) {
         $course = Course::find($id);
         $course -> delete();
-        return redirect('/courses') -> with('message', 'Course "' . $course -> code . '" successfully removed');
+        return redirect('/courses') -> with('message', 'Course ' . $course -> code . ' successfully removed');
     }
 }

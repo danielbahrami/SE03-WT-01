@@ -5,17 +5,17 @@
 
 <table class="department">
     <tr>
-        <th class="code">Code</th>
-        <th class="name">Name</th>
-        <th class="courses">Courses</th>
-        <th class="show">Show</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Courses</th>
+        <th>Show</th>
     </tr>
     @foreach ($departments as $department)
         <tr>
             <td class="code">{{$department['code']}}</td>
             <td class="name">{{$department['name']}}</td>
             <td class="courses">{{$department->courses->count()}}</td>
-            <td class="show"><a href={{url('/departments', [$department ->id])}}>Show</a></td>
+            <td ><a class="show" href={{url('/departments', [$department ->id])}}>Show</a></td>
         </tr>
     @endforeach
 </table>

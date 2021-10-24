@@ -6,10 +6,9 @@
     <input type="hidden" name="id" value="{{$course['id']}}">
     <label for="department_id">Department:</label>
     <br>
-    <select name="department_id" id="department_id">
-        <option selected="true">{{$course['department_id']}}</option>
+    <select name="department" id="department">
         @foreach($department as $department)
-            <option value="{{$department -> id}}">{{$department -> name}}</option>
+            <option {{ $department-> id== $course->department->id ? 'selected' : '' }} value="{{$department -> id}}">{{$department -> name}}</option>
         @endforeach
     </select>
     <br><br>
