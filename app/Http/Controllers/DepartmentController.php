@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Department;
 use App\Models\Course;
 
-class DepartmentsController extends Controller
+class DepartmentController extends Controller
 {
     public function index() {
         $data = Department::all();

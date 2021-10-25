@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use \Illuminate\Http\Response;
 use App\Models\Course;
 
-class CoursesController extends Controller {
+class CourseController extends Controller {
     public function index() {
         $data = Course::all();
         return view('courses', ['courses' => $data]);
