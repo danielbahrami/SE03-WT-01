@@ -1,19 +1,30 @@
 <?php
 
-
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/', [MainController::class, 'index']);
 
-Route::get('/', function() {
-   return "Welcome to Assignment 1 of Web Technologies E2021<br>Edit this page to get started 😄";
+Route::prefix('departments')->group(function() {
+    Route::get('/', [DepartmentController::class, 'index']);
+    Route::get('/create', [DepartmentController::class, 'createDepartment']);
+    Route::post('/create', [DepartmentController::class, 'saveDepartment']);
+    Route::get('/{id}', [DepartmentController::class, 'showDepartment']);
+    Route::get('/{id}/edit', [DepartmentController::class, 'editDepartment']);
+    Route::get('/{id}/delete', [DepartmentController::class, 'deleteDepartment']);
 });
+
+Route::post('editDepartment', [DepartmentController::class, 'updateDepartment']);
+
+Route::prefix('courses')->group(function () {
+    Route::get('/', [CourseController::class, 'index']);
+    Route::get('/create', [CourseController::class, 'createCourse']);
+    Route::post('/create', [CourseController::class, 'saveCourse']);
+    Route::get('/{id}', [CourseController::class, 'showCourse']);
+    Route::get('/{id}/edit', [CourseController::class, 'editCourse']);
+    Route::get('/{id}/delete', [CourseController::class, 'deleteCourse']);
+});
+
+Route::post('editCourse', [CourseController::class, 'updateCourse']);
