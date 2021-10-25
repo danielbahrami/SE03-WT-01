@@ -5,15 +5,15 @@
 
 <table class="department">
     <tr>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Courses</th>
-        <th>Show</th>
+        <th class="header">Name</th>
+        <th class="header">Code</th>
+        <th class="header">Courses</th>
+        <th class="header">Show</th>
     </tr>
     @foreach ($departments as $department)
         <tr>
-            <td class="code">{{$department['code']}}</td>
             <td class="name">{{$department['name']}}</td>
+            <td class="code">{{$department['code']}}</td>
             <td class="courses">{{$department->courses->count()}}</td>
             <td ><a class="show" href={{url('/departments', [$department ->id])}}>Show</a></td>
         </tr>
@@ -34,28 +34,10 @@
     .department {
         font-family: arial, sans-serif;
         border-collapse: collapse;
-        width: 70%;
+        width: 50%;
     }
 
-    .code {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .name {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .courses {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .show {
+    .header, .code, .name, .courses, .show {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;

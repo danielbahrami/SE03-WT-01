@@ -1,52 +1,14 @@
 <html>
 <style>
-    .header {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .department {
+    .department, .course {
         font-family: arial, sans-serif;
         border-collapse: collapse;
-        width: 70%;
+        width: 50%;
     }
-
-    .code {
+    .header, .code, .name, .description, .ects, .show {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
-    }
-
-    .name {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .description {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .course {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 70%;
-    }
-
-    .ects, .show {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .show {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-
     }
 
     .success-message {
@@ -59,13 +21,13 @@
 
 <table class="department">
     <tr>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Description</th>
+        <th class="header">Name</th>
+        <th class="header">Code</th>
+        <th class="header">Description</th>
     </tr>
         <tr>
-            <td class="code">{{$department -> code}}</td>
-            <td class="name">{{$department -> name}}</td>
+            <td class="code">{{$department -> name}}</td>
+            <td class="name">{{$department -> code}}</td>
             <td class="description">{{$department -> description}}</td>
         </tr>
 
@@ -78,16 +40,16 @@
 
     <table class="course">
         <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>ECTS</th>
-            <th>Show</th>
+            <th class="header">Name</th>
+            <th class="header">Code</th>
+            <th class="header">ECTS</th>
+            <th class="header">Show</th>
         </tr>
         @foreach($department-> courses as $course)
         <tr>
 
-            <td class="code">{{$course -> code}}</td>
-            <td class="name">{{$course -> name}}</td>
+            <td class="code">{{$course -> name}}</td>
+            <td class="name">{{$course -> code}}</td>
             <td class="ects">{{$course -> ects}}</td>
             <td><a class="show" href={{url('/courses', [$course ->id])}}>Show</a></td>
         </tr>
