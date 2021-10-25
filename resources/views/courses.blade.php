@@ -3,38 +3,15 @@
     .course {
         font-family: arial, sans-serif;
         border-collapse: collapse;
-        width: 70%;
+        width: 0%;
     }
 
-    .code {
+    .header, .code, .name, .ects, .department, .show {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
     }
 
-    .name {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .ects {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .department {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .show {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
     .success-message {
         font-family: arial, sans-serif;
     }
@@ -50,17 +27,17 @@
 
 <table class="course">
     <tr>
-        <th>Department ID</th>
-        <th>Code</th>
-        <th>Name</th>
-        <th>ECTS</th>
-        <th>Show</th>
+        <th class="header">Department</th>
+        <th class="header">Name</th>
+        <th class="header">Code</th>
+        <th class="header">ECTS</th>
+        <th class="header">Show</th>
     </tr>
     @foreach ($courses as $course)
         <tr>
             <td><a class="department" href="{{url('departments', [$course ->department->id])}}">{{$course ->department->name}}</a></td>
-            <td class="code">{{$course['code']}}</td>
-            <td class="name">{{$course['name']}}</td>
+            <td class="code">{{$course['name']}}</td>
+            <td class="name">{{$course['code']}}</td>
             <td class="ects">{{$course['ects']}}</td>
             <td><a class="show" href={{url('/courses', [$course ->id])}}>Show</a></td>
         </tr>

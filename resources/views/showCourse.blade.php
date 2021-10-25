@@ -4,11 +4,11 @@
 
 <table class="course">
     <tr>
-        <th>Department ID</th>
-        <th>Name</th>
-        <th>Code</th>
-        <th>ECTS</th>
-        <th>Description</th>
+        <th class="header">Department</th>
+        <th class="header">Name</th>
+        <th class="header">Code</th>
+        <th class="header">ECTS</th>
+        <th class="header">Description</th>
     </tr>
     <tr>
         <td><a class="department" href="{{url('departments', [$course ->department->id])}}">{{$course ->department->name}}</a></td>
@@ -32,33 +32,10 @@
     .course {
         font-family: arial, sans-serif;
         border-collapse: collapse;
-        width: 70%;
-    }
-    .department {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
+        width: 50%;
     }
 
-    .name {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .code {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .ects {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .description {
+    .header, .code, .name, .description, .ects, .department {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
