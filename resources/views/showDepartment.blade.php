@@ -48,6 +48,7 @@
 </html>
 
 <style>
+
     .department, .course {
         font-family: arial, sans-serif;
         border-collapse: collapse;
