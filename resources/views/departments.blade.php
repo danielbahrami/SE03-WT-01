@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<h1>List of departments</h1>
+<h1>Departments</h1>
 
 <table class="department">
     <tr>
@@ -14,14 +14,13 @@
         <tr>
             <td class="name">{{$department['name']}}</td>
             <td class="code">{{$department['code']}}</td>
-            <td class="courses">{{$department->courses->count()}}</td>
-            <td ><a class="show" href={{url('/departments', [$department ->id])}}>Show</a></td>
+            <td class="courses">{{$department -> courses -> count()}}</td>
+            <td><a class="show" href={{url('/departments', [$department -> id])}}>Show</a></td>
         </tr>
     @endforeach
 </table>
 
-<a class="new" href=/departments/create><h2>Create new department</h2></a>
-
+<a class="new" href=/departments/create><h2>Create department</h2></a>
 
 @if (session('message'))
     <div class="success-message">{{session('message')}}</div>
@@ -31,13 +30,14 @@
 </html>
 
 <style>
+
     .department {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 50%;
     }
 
-    .header, .code, .name, .courses, .show {
+    .header, .name, .code, .courses, .show {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
@@ -46,4 +46,5 @@
     .success-message {
         font-family: arial, sans-serif;
     }
+
 </style>

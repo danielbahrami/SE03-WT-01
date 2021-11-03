@@ -1,6 +1,8 @@
 <html>
 <body>
+
 <h1>Edit course</h1>
+
 <form action="/editCourse" method="POST">
     @csrf
     <input type="hidden" name="id" value="{{$course['id']}}">
@@ -8,7 +10,8 @@
     <br>
     <select name="department" id="department">
         @foreach($department as $department)
-            <option {{ $department-> id== $course->department->id ? 'selected' : '' }} value="{{$department -> id}}">{{$department -> name}}</option>
+            <option
+                {{$department -> id == $course -> department -> id ? 'selected' : ''}} value="{{$department -> id}}">{{$department -> name}}</option>
         @endforeach
     </select>
     <br><br>
@@ -30,5 +33,6 @@
     <br><br><br>
     <button class="submit" type="submit">Update course</button>
 </form>
+
 </body>
 </html>
