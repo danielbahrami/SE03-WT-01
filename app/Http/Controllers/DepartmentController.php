@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Department;
-use App\Models\Course;
 
-class DepartmentController extends Controller
-{
+use App\Models\Department;
+use Illuminate\Http\Request;
+
+class DepartmentController extends Controller {
+
     public function index() {
         $data = Department::all();
         return view('departments', ['departments' => $data]);
@@ -19,8 +18,8 @@ class DepartmentController extends Controller
 
     public function saveDepartment(Request $request) {
         $department = new Department();
-        $department -> code = $request -> code;
         $department -> name = $request -> name;
+        $department -> code = $request -> code;
         $department -> description = $request -> description;
         $department -> save();
         return redirect('/departments') -> with('message', 'Department ' . $department -> code . ' created successfully');
@@ -29,7 +28,7 @@ class DepartmentController extends Controller
     public function showDepartment($id) {
         $department = Department::find($id);
         $courses = $department -> courses;
-       return view('showDepartment', compact('department', 'courses'));
+        return view('showDepartment', compact('department', 'courses'));
     }
 
     public function editDepartment($id) {
@@ -43,7 +42,7 @@ class DepartmentController extends Controller
         $department -> code = $request -> code;
         $department -> description = $request -> description;
         $department -> save();
-        return redirect('/departments/'.$department->id) -> with('message', 'Department ' . $department -> code . ' updated successfully');
+        return redirect('/departments/' . $department -> id) -> with('message', 'Department ' . $department -> code . ' updated successfully');
     }
 
     public function deleteDepartment($id) {

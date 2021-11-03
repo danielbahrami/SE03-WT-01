@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Course;
 use App\Models\Department;
 use Illuminate\Http\Request;
-use \Illuminate\Http\Response;
-use App\Models\Course;
 
 class CourseController extends Controller {
+
     public function index() {
         $data = Course::all();
         return view('courses', ['courses' => $data]);
@@ -47,7 +48,7 @@ class CourseController extends Controller {
         $course -> ects = $request -> ects;
         $course -> description = $request -> description;
         $course -> save();
-        return redirect('/courses/'.$course->id) -> with('message', 'Course ' . $course -> code . ' updated successfully');
+        return redirect('/courses/' . $course -> id) -> with('message', 'Course ' . $course -> code . ' updated successfully');
     }
 
     public function deleteCourse($id) {
