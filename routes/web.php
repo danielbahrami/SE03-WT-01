@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index']);
 
-Route::prefix('departments')->group(function() {
+Route::prefix('departments') -> group(function() {
     Route::get('/', [DepartmentController::class, 'index']);
     Route::get('/create', [DepartmentController::class, 'createDepartment']);
     Route::post('/create', [DepartmentController::class, 'saveDepartment']);
@@ -18,7 +18,7 @@ Route::prefix('departments')->group(function() {
 
 Route::post('editDepartment', [DepartmentController::class, 'updateDepartment']);
 
-Route::prefix('courses')->group(function () {
+Route::prefix('courses') -> group(function() {
     Route::get('/', [CourseController::class, 'index']);
     Route::get('/create', [CourseController::class, 'createCourse']);
     Route::post('/create', [CourseController::class, 'saveCourse']);

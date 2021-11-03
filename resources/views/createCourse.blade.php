@@ -1,9 +1,12 @@
 <html>
 <body>
+
 <h1>Create course</h1>
+
 <form action="create" method="POST">
     @csrf
-    <label for="department_id">Department:</label><br>
+    <label for="department_id">Department:</label>
+    <br>
     <select class="department" name="department" id="department">
         <option selected="false"></option>
         @foreach($department as $department)
@@ -29,5 +32,6 @@
     <br><br><br>
     <button class="submit" type="submit">Create course</button>
 </form>
+
 </body>
 </html>
