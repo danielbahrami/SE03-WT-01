@@ -18,7 +18,7 @@
     <br>
     <input type="text" id="description" name="description" value="{{$department['description']}}">
     <br><br><br>
-    <button class="submit" type="submit">Update Department</button>
+    <button class="submit" type="submit">Update department</button>
 </form>
 
 </body>

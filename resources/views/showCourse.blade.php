@@ -12,8 +12,7 @@
         <th class="header">Description</th>
     </tr>
     <tr>
-        <td><a class="department"
-               href="{{url('departments', [$course -> department -> id])}}">{{$course -> department -> name}}</a></td>
+        <td><a class="department" href="{{url('departments', [$course -> department -> id])}}">{{$course -> department -> name}}</a></td>
         <td class="name">{{$course -> name}}</td>
         <td class="code">{{$course -> code}}</td>
         <td class="ects">{{$course -> ects}}</td>
@@ -40,7 +39,7 @@
         width: 50%;
     }
 
-    .header, .department, .name, .code, .description, .ects {
+    .header, .department, .name, .code, .ects, .description {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;

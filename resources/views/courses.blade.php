@@ -13,9 +13,7 @@
     </tr>
     @foreach ($courses as $course)
         <tr>
-            <td><a class="department"
-                   href="{{url('departments', [$course -> department -> id])}}">{{$course -> department -> name}}</a>
-            </td>
+            <td><a class="department" href="{{url('departments', [$course -> department -> id])}}">{{$course -> department -> name}}</a></td>
             <td class="name">{{$course['name']}}</td>
             <td class="code">{{$course['code']}}</td>
             <td class="ects">{{$course['ects']}}</td>
