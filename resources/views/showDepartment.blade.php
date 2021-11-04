@@ -31,7 +31,6 @@
     </tr>
     @foreach($department-> courses as $course)
         <tr>
-
             <td class="code">{{$course -> name}}</td>
             <td class="name">{{$course -> code}}</td>
             <td class="ects">{{$course -> ects}}</td>
