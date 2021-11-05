@@ -10,8 +10,7 @@
     <br>
     <select name="department" id="department">
         @foreach($department as $department)
-            <option
-                {{$department -> id == $course -> department -> id ? 'selected' : ''}} value="{{$department -> id}}">{{$department -> name}}</option>
+            <option {{$department -> id == $course -> department -> id ? 'selected' : ''}} value="{{$department -> id}}">{{$department -> name}}</option>
         @endforeach
     </select>
     <br><br>
